@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Calculator</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <script src="scripts/operations.js" defer></script>
     <script src="scripts/dom.js" defer></script>
     <script src="scripts/events.js" defer></script>
@@ -11,24 +12,26 @@
 <body>
     <div id="calculator-container">
         <div id="display">7284242842</div>
+        <div id="buttons">
+            <button class="digit">0</button>
+            <button class="digit">1</button>
+            <button class="digit">2</button>
+            <button class="digit">3</button>
+            <button class="digit">4</button>
+            <button class="digit">5</button>
+            <button class="digit">6</button>
+            <button class="digit">7</button>
+            <button class="digit">8</button>
+            <button class="digit">9</button>
 
-        <button class="digit">0</button>
-        <button class="digit">1</button>
-        <button class="digit">2</button>
-        <button class="digit">3</button>
-        <button class="digit">4</button>
-        <button class="digit">5</button>
-        <button class="digit">6</button>
-        <button class="digit">7</button>
-        <button class="digit">8</button>
-        <button class="digit">9</button>
+            <button class="operator">+</button>
+            <button class="operator">-</button>
+            <button class="operator">x</button>
+            <button class="operator">÷</button>
 
-        <button class="operator">+</button>
-        <button class="operator">-</button>
-        <button class="operator">x</button>
-        <button class="operator">÷</button>
-
-        <button class="equals">=</button>
+            <button id="equals">=</button>
+            <button id="clear">AC</button>
+        </div>
     </div>
 </body>
 </html>
