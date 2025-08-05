@@ -8,6 +8,7 @@ function addAllEventListeners() {
     addDigitEventListeners();
     addClearEventListeners();
     addOperatorEventListeners();
+    addEqualsEventListener();
 }
 
 function addDigitEventListeners() {
@@ -33,6 +34,13 @@ function addOperatorEventListeners() {
             addCharacter(button.textContent)
         })
     });
+}
+
+function addEqualsEventListener() {
+    let equalsButton = document.querySelector('#equals');
+    equalsButton.addEventListener('click', () => {
+        calculateResult();
+    })
 }
 
 addAllEventListeners();

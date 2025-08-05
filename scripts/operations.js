@@ -5,7 +5,7 @@ in the calculator.
 */
 
 function add(a, b) {
-    return (a + b);
+    return (1*a + 1*b);
 }
 
 function subtract(a, b) {
@@ -17,7 +17,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    return (a / b);
+    return (1*a / 1*b);
 }
 
 function operate(operator, firstNum, secondNum) {
@@ -26,9 +26,9 @@ function operate(operator, firstNum, secondNum) {
             return add(firstNum, secondNum);
         case '-':
             return subtract(firstNum, secondNum);
-        case '*':
+        case 'x':
             return multiply(firstNum, secondNum);
-        case '/':
+        case '÷':
             return divide(firstNum, secondNum);
         default:
             return null;
@@ -36,5 +36,6 @@ function operate(operator, firstNum, secondNum) {
 }
 
 let firstNum;
+let operatorPresent = false;
 let secondNum;
 let operator;
