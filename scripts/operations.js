@@ -38,5 +38,6 @@ function operate(operator, firstNum, secondNum) {
 
 let firstNum;
 let operatorPresent = false;
+let resultPresent = false;
 let secondNum;
 let operator;

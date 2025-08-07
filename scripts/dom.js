@@ -20,14 +20,16 @@ function addCharacter(char) {
 
     if (operators.includes(char)) {
         if (operatorPresent) {
-            calculateResult();
+            calculateResult('operator');
             firstNum = document.querySelector('#display').textContent;
             operatorPresent = true;
         } else {
             firstNum = displayText;
             operatorPresent = true;
         }
+        resultPresent = false;
     }
+    if (resultPresent) {deleteAll();}
     display.textContent += char;
 }
 
@@ -46,6 +48,7 @@ function deleteAll() {
     firstNum = null;
     secondNum = null;
     operator = null;
+    resultPresent = false;
     operatorPresent = false;
 
     let display = document.querySelector('#display');
@@ -53,7 +56,7 @@ function deleteAll() {
     
 }
 
-function calculateResult() {
+function calculateResult(from) {
 
     if (!operatorPresent) {return;}
     let display = document.querySelector('#display');
@@ -72,5 +75,9 @@ function calculateResult() {
         display.textContent = 'UNDEFINED';
     } else {
         display.textContent = Number(result.toPrecision(8));
+    }
+
+    if (from == 'equals') {
+        resultPresent = true;
     }
 }

@@ -47,7 +47,7 @@ function addOperatorEventListeners() {
 function addEqualsEventListener() {
     let equalsButton = document.querySelector('#equals');
     equalsButton.addEventListener('click', () => {
-        calculateResult();
+        calculateResult('equals');
     })
 }
 
