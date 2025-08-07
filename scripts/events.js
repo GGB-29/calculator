@@ -7,6 +7,7 @@ allowing users to input data.
 function addAllEventListeners() {
     addDigitEventListeners();
     addClearEventListeners();
+    addClearAllEventListeners();
     addOperatorEventListeners();
     addEqualsEventListener();
 }
@@ -24,6 +25,13 @@ function addClearEventListeners() {
     let clearButton = document.querySelector('#clear');
     clearButton.addEventListener('click', () => {
         deleteCharacter();
+    });
+}
+
+function addClearAllEventListeners() {
+    let clearButton = document.querySelector('#clear-all');
+    clearButton.addEventListener('click', () => {
+        deleteAll();
     });
 }
 

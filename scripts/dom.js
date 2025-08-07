@@ -42,6 +42,17 @@ function deleteCharacter() {
     display.textContent = newDisplay.join('');
 }
 
+function deleteAll() {
+    firstNum = null;
+    secondNum = null;
+    operator = null;
+    operatorPresent = false;
+
+    let display = document.querySelector('#display');
+    display.textContent = '';
+    
+}
+
 function calculateResult() {
 
     if (!operatorPresent) {return;}
