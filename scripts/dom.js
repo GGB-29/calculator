@@ -74,6 +74,7 @@ function calculateResult(from) {
     } else if (typeof(result) === 'string') {
         display.textContent = 'UNDEFINED';
     } else {
+        answer = result;
         display.textContent = Number(result.toPrecision(8));
     }
 

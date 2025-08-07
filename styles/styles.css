@@ -34,7 +34,8 @@ body {
     padding: 0px 25px;
 }
 
-button {
+button,
+#note {
     margin-bottom: 2px;
     border-radius: 10px;
     font-family: 'Share Tech Mono', monospace;
@@ -55,6 +56,7 @@ button {
 
 #equals {
     background-color: rgb(21, 114, 201);
+    width: 158px;
 }
 
 #clear {
@@ -63,4 +65,12 @@ button {
 
 #clear-all {
     background-color: #b913a3;
+}
+
+#note {
+    margin:18px;
+    font-size: 18px;
+    justify-content: flex-end;
+    align-self: flex-start;
+    width: 500px;
 }

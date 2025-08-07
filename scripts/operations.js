@@ -41,3 +41,4 @@ let operatorPresent = false;
 let resultPresent = false;
 let secondNum;
 let operator;
+let answer;
