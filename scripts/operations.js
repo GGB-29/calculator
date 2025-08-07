@@ -17,7 +17,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    return (1*a / 1*b);
+    return ((1*a) / (1*b));
 }
 
 function operate(operator, firstNum, secondNum) {
@@ -29,6 +29,7 @@ function operate(operator, firstNum, secondNum) {
         case 'x':
             return multiply(firstNum, secondNum);
         case '÷':
+            if (secondNum == '0') {return 'ERROR';}
             return divide(firstNum, secondNum);
         default:
             return null;

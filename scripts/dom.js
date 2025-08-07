@@ -16,11 +16,13 @@ function addCharacter(char) {
     let displayText = display.textContent;
     const operators = ['+', 'x', '÷', '-'];
 
+    if (operators.includes(displayText.slice(-1)) && operators.includes(char)) {return;}
+
     if (operators.includes(char)) {
         if (operatorPresent) {
             calculateResult();
             firstNum = document.querySelector('#display').textContent;
-            operatorPresent = false;
+            operatorPresent = true;
         } else {
             firstNum = displayText;
             operatorPresent = true;
@@ -30,21 +32,34 @@ function addCharacter(char) {
 }
 
 function deleteCharacter() {
+    const operators = ['+', 'x', '÷', '-'];
     let display = document.querySelector('#display');
     let newDisplay = display.textContent.split('');
-    newDisplay.pop();
+
+    if(operators.includes(newDisplay.pop())) {
+        operatorPresent = false;
+    }
     display.textContent = newDisplay.join('');
 }
 
 function calculateResult() {
+
+    if (!operatorPresent) {return;}
     let display = document.querySelector('#display');
     let operator = display.textContent.match(/[+\-x÷]/)[0];
-    console.log(operator);
     let secondOperand = (display.textContent.split(/[-+÷x]/))[1];
+    
+    if (!secondOperand) {return;}
 
     secondNum = secondOperand;
     operatorPresent = false;
     let result = operate(operator, firstNum, secondNum);
-    console.log(result);
-    display.textContent = result;
+    let MAX_DISPLAY_VALUE = 9999999999;
+    if ((result) > MAX_DISPLAY_VALUE) {
+        display.textContent = 'TOO LARGE'
+    } else if (typeof(result) === 'string') {
+        display.textContent = 'UNDEFINED';
+    } else {
+        display.textContent = Number(result.toPrecision(8));
+    }
 }
