@@ -21,6 +21,7 @@ function addKeyboardEventListeners() {
         if (!allowedKeys.includes(key)) return;
 
         let inputKey = key;
+        //map enter and backspace to equals and delete character respectively
         if (key === 'Enter') inputKey = '=';
         if (key === 'Backspace') inputKey = 'C';
 
