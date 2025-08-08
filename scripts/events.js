@@ -23,7 +23,7 @@ function addKeyboardEventListeners() {
         let inputKey = key;
         //map enter and backspace to equals and delete character respectively
         if (key === 'Enter') inputKey = '=';
-        if (key === 'Backspace') inputKey = 'C';
+        if (key === 'Backspace') inputKey = 'c';
 
         handleInput(inputKey);
     });

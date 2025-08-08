@@ -91,8 +91,10 @@ function handleInput(key) {
         addCharacter(key);
     } else if (key === '=') {
         calculateResult('equals');
-    } else if (key === 'C') {
+    } else if (key === 'c') {
         deleteCharacter();
+    } else if (key === 'C') {
+        deleteAll();
     } else {
         return;
     }
