@@ -29,6 +29,7 @@ function operate(operator, firstNum, secondNum) {
         case 'x':
             return multiply(firstNum, secondNum);
         case '÷':
+            //don't allow division by zero
             if (secondNum == '0') {return 'ERROR';}
             return divide(firstNum, secondNum);
         default:
@@ -36,9 +37,13 @@ function operate(operator, firstNum, secondNum) {
     }
 }
 
+//variable to store first operand
 let firstNum;
+//flag to check if there is an operator present on display
 let operatorPresent = false;
+//flag to check if a result is currently shown on the display
 let resultPresent = false;
+//variable to store second operand
 let secondNum;
+//variable to store the operator
 let operator;
-let answer;
