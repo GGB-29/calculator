@@ -16,6 +16,11 @@ function addCharacter(char) {
     let displayText = display.textContent;
     const operators = ['+', 'x', '÷', '-'];
 
+    if (operators.includes(displayText.slice(-1)) && char === '-') {
+        display.textContent+=char;
+        return;
+    }
+
     if (operators.includes(displayText.slice(-1)) && operators.includes(char)) {return;}
 
     if (operators.includes(char)) {
