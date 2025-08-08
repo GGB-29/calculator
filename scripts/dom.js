@@ -56,12 +56,35 @@ function deleteAll() {
     
 }
 
+function handleInput(key) {
+    const characters = '0123456789+-*/.'
+    if (key == '*') {
+        addCharacter('x');
+    } else if (key == '/'){
+        addCharacter('÷');
+    } else if (characters.includes(key)) {
+        addCharacter(key);
+    } else if (key === '=') {
+        calculateResult('equals');
+    } else if (key === 'C') {
+        deleteCharacter();
+    } else {
+        return;
+    }
+}
+
 function calculateResult(from) {
 
     if (!operatorPresent) {return;}
     let display = document.querySelector('#display');
-    let operator = display.textContent.match(/[+\-x÷]/)[0];
-    let secondOperand = (display.textContent.split(/[-+÷x]/))[1];
+    
+    let operatorMatch = display.textContent.slice(1).match(/[+\-x÷]/);
+    if (!operatorMatch) return;
+
+    let operatorIndex = operatorMatch.index + 1; 
+    let operator = display.textContent[operatorIndex];
+
+    let secondOperand = display.textContent.slice(operatorIndex + 1);
     
     if (!secondOperand) {return;}
 
@@ -69,6 +92,7 @@ function calculateResult(from) {
     operatorPresent = false;
     let result = operate(operator, firstNum, secondNum);
     let MAX_DISPLAY_VALUE = 9999999999;
+
     if ((result) > MAX_DISPLAY_VALUE) {
         display.textContent = 'TOO LARGE'
     } else if (typeof(result) === 'string') {

@@ -10,6 +10,22 @@ function addAllEventListeners() {
     addClearAllEventListeners();
     addOperatorEventListeners();
     addEqualsEventListener();
+    addKeyboardEventListeners();
+}
+
+function addKeyboardEventListeners() {
+    document.addEventListener('keydown', (event) => {
+        const allowedKeys = '0123456789+-*/.=EnterBackspaceCc';
+        const key = event.key;
+
+        if (!allowedKeys.includes(key)) return;
+
+        let inputKey = key;
+        if (key === 'Enter') inputKey = '=';
+        if (key === 'Backspace') inputKey = 'C';
+
+        handleInput(inputKey);
+    });
 }
 
 function addDigitEventListeners() {
